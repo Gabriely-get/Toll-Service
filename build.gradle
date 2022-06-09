@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+}
+
+group 'org.gabrielyget'
+version '1.0-SNAPSHOT'
+
+def spring_version = '5.3.11'
+def cxf_version = '3.4.5'
+def jetty_version = '9.4.44.v20210927'
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation([
+            "org.springframework:spring-core:$spring_version",
+            "org.springframework:spring-context:$spring_version",
+            "org.springframework:spring-beans:$spring_version",
+            "org.springframework:spring-web:$spring_version",
+
+            "org.apache.cxf:cxf-integration:$cxf_version",
+            "org.apache.cxf:cxf-rt-rs-client:$cxf_version",
+            "org.apache.cxf:cxf-rt-rs-extension-providers:$cxf_version",
+            "org.apache.cxf:cxf-rt-frontend:$cxf_version",
+
+            "org.eclipse.jetty:jetty-server:${jetty_version}",
+            "org.eclipse.jetty:jetty-annotations:${jetty_version}",
+            "org.eclipse.jetty:jetty-webapp:${jetty_version}",
+
+            'com.googlecode.json-simple:json-simple:1.1.1',
+            "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.13.0",
+    ])
+    testImplementation([
+            "org.junit.jupiter:junit-jupiter-api:5.8.2",
+            "org.springframework:spring-test:$spring_version"
+    ])
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+test {
+    useJUnitPlatform()
+}
