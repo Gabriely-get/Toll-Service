@@ -9,6 +9,7 @@ pipeline {
         }
         stage('upload-artifact') {
             steps {
+                sh 'chmod +x -R ${env.WORKSPACE}'
                 sh './upload-artifact.sh'
             }
         }
