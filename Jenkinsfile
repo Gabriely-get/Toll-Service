@@ -9,7 +9,7 @@ pipeline {
         }
         stage('artifact') {
             steps {
-                sh './pipe.sh'
+                sh './upload-artifact.sh'
             }
         }
     }
