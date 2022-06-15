@@ -9,7 +9,7 @@ pipeline {
         }
         stage('upload-artifact') {
             steps {
-                sh './upload-artifact.sh'
+                sh 'sudo ./upload-artifact.sh'
             }
         }
     }
