@@ -9,8 +9,7 @@ pipeline {
         }
         stage('upload-artifact') {
             steps {
-
-                sh './a.sh'
+                sh '/home/ilegra/Documents/My-Github/Toll-Service/a.sh'
             }
         }
     }
