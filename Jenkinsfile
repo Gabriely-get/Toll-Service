@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'linux' }
+    agent any
     stages {
         stage('build') {
             steps {
@@ -9,7 +9,7 @@ pipeline {
         }
         stage('upload-artifact') {
             steps {
-                sh '/home/ilegra/Documents/My-Github/Toll-Service/a.sh'
+                sh 'curl -u gabriely:Ilegra21! -X PUT "http://localhost:8082/artifactory/generic-local/artifact/test.jar" -T /build/libs/Toll-1.0.jar'
             }
         }
     }
