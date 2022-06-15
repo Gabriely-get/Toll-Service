@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'linux' }
     stages {
         stage('build') {
             steps {
@@ -7,7 +7,7 @@ pipeline {
                 sh './gradlew build'
             }
         }
-        stage('artifact') {
+        stage('upload-artifact') {
             steps {
                 sh './upload-artifact.sh'
             }
