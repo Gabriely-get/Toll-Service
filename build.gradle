@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'org.gabrielyget'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 def spring_version = '5.3.11'
 def cxf_version = '3.4.5'
