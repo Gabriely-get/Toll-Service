@@ -45,3 +45,21 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'org.gabrielyget.cloudnative.Tema05.Engine.CFXRunner'
+        )
+    }
+}
+
+task fatJar(type: Jar) {
+    manifest.attributes(['Main-Class':'org.gabrielyget.cloudnative.Tema05.Engine.CFXRunner'])
+
+    baseName('TollFat')
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
