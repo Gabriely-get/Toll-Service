@@ -1,0 +1,11 @@
+---
+
+- hosts: localhost
+
+  tasks:
+
+    - name: install java
+      apt:
+        name: openjdk-11-jdk
+        state: latest
+      when: ansible_distribution == "Ubuntu"
